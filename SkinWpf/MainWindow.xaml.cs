@@ -66,6 +66,7 @@ namespace SkinWpf
         /// <param name="e"></param>
         private void BtnStar_Click(object sender, RoutedEventArgs e)
         {
+
             Menu menu = new Menu();
             menu.Show();
         }
