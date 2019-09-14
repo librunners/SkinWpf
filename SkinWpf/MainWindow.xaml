@@ -4,9 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:pu="clr-namespace:Panuon.UI.Silver;assembly=Panuon.UI.Silver"
-        xmlns:local="clr-namespace:SkinWpf"
+        xmlns:shi="clr-namespace:SkinWpf;assembly=SkinWpf"
         mc:Ignorable="d"
-        Title="MainWindow" Height="427.959" Width="800" WindowStartupLocation="CenterScreen"  Style="{DynamicResource NoResize_Window}">
+        Title="MainWindow"  Window.Loaded="Window_Loaded"  WindowStartupLocation="CenterScreen"  Style="{DynamicResource NoResize_Window}">
 
 
     <Window.Resources>
@@ -298,11 +298,10 @@
     </Window.Resources>
     <Grid>
         <Grid>
-
-            <Image Source="/SkinWpf;component/Resources/Images/logo.jpg" Margin="217,10,240,156" />
-            <Button Height="33"  Margin="313,248,333,118" Name="btnStar" Click="BtnStar_Click">
-                <TextBlock FontSize="18" FontFamily="Consolas;Microsoft YaHei" Foreground="Gray" Text="启动成相室" />
-            </Button>
+            <Label Name="btnStar" Width="150" Visibility="Hidden" FontSize="35" Foreground="White" Margin="240,180,240,218" FontFamily="Consolas;Microsoft YaHei">启动中...</Label>
+            <Image Name="logoImg" Source="/SkinWpf;component/Resources/Images/logo.jpg" Margin="217,10,240,156" />
+            <pu:Loading  Width="300" Height="300" Stroke="#007ACC" Name="load" IsRunning="False" />
+           
         </Grid>
 
     </Grid>

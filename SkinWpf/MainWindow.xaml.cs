@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 using Panuon.UI.Silver;
 
 namespace SkinWpf
@@ -58,17 +59,49 @@ namespace SkinWpf
         }
 
         #endregion
-      
-        /// <summary>
-        /// 点击启动成相室按钮
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void BtnStar_Click(object sender, RoutedEventArgs e)
+        DispatcherTimer timer = new DispatcherTimer();
+        int timeNum = 0;
+        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            // 设置全屏
+            this.WindowState = System.Windows.WindowState.Normal;
+            this.WindowStyle = System.Windows.WindowStyle.None;
+            this.ResizeMode = System.Windows.ResizeMode.NoResize;
+            this.Topmost = true;
 
-            Menu menu = new Menu();
-            menu.Show();
+            this.Left = 0.0;
+            this.Top = 0.0;
+            this.Width = System.Windows.SystemParameters.PrimaryScreenWidth;
+            this.Height = System.Windows.SystemParameters.PrimaryScreenHeight;
+
+          
+            timer.Interval = TimeSpan.FromMilliseconds(1000);
+            timer.Tick += Timer_Tick; ;  //你的事件
+            timer.Start();
+        
+
+
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            timeNum++;
+            if (timeNum == 3)
+            {
+                //隐藏logo  显示“程序正在启动...”
+                this.load.IsRunning = true;
+                this.logoImg.Visibility = Visibility.Hidden;
+                this.btnStar.Visibility = Visibility.Visible;
+            }
+            if (timeNum == 9)
+            {
+                //隐藏提示内容 显示Logo 并且显示 右上角左下角按钮
+                this.load.IsRunning = false;
+                this.logoImg.Visibility = Visibility.Visible;
+                this.btnStar.Visibility = Visibility.Hidden;
+                timer.Stop();
+            }
+
         }
     }
 }
