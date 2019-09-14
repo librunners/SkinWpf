@@ -29,13 +29,13 @@ namespace SkinWpf
         }
         #region 界面元素操作
         /// <summary>
-        /// 窗体移动
+        /// 禁止窗体移动
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if (e.ChangedButton == MouseButton.Left) this.DragMove();
+            //if (e.ChangedButton == MouseButton.Left) this.DragMove();
         }
         /// <summary>
         /// 关闭窗体
@@ -78,9 +78,6 @@ namespace SkinWpf
             timer.Interval = TimeSpan.FromMilliseconds(1000);
             timer.Tick += Timer_Tick; ;  //你的事件
             timer.Start();
-        
-
-
         }
 
         private void Timer_Tick(object sender, EventArgs e)
@@ -99,9 +96,43 @@ namespace SkinWpf
                 this.load.IsRunning = false;
                 this.logoImg.Visibility = Visibility.Visible;
                 this.btnStar.Visibility = Visibility.Hidden;
+                //显示按钮
+                this.custerManageBox.Visibility = Visibility.Visible;
+                this.quitBox.Visibility = Visibility.Visible;
                 timer.Stop();
+                
             }
 
+        }
+
+        /// <summary>
+        /// 客户管理按钮
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CusterManage_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("点击按钮干啥");
+        }
+
+        /// <summary>
+        /// 设置按钮
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Seting_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("点击按钮干啥");
+        }
+
+        /// <summary>
+        /// 退出按钮
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Quit_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("点击按钮干啥");
         }
     }
 }

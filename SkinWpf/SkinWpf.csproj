@@ -78,6 +78,7 @@
     <Compile Include="CustomManage.xaml.cs">
       <DependentUpon>CustomManage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ImageButton.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -130,6 +131,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Menu.xaml.cs">
@@ -165,6 +170,9 @@
   <ItemGroup>
     <Content Include="bin\Debug\SkinWpf.exe" />
     <Content Include="bin\Debug\SkinWpf.pdb" />
+    <Resource Include="Resources\Images\cutmer.png" />
+    <Resource Include="Resources\Images\quit.png" />
+    <Resource Include="Resources\Images\seting.png" />
     <Resource Include="ShareWork.ico" />
     <Resource Include="Resources\Images\logo.jpg" />
     <Resource Include="Resources\Images\login.jpg" />
