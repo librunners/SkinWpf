@@ -308,9 +308,9 @@
             <xi:ImageButton Image="/Resources/Images/cutmer.png" x:Name="custerManage" Click="CusterManage_Click"  FontSize="23" FontWeight="Bold" Foreground="#B2A581" Content="客户管理" ImageHeight="60" ImageWidth="60" Width="100" Height="100" Margin="30,10,10,10"/>
         </StackPanel>
         <Grid>
-            <StackPanel Orientation="Horizontal" Name="quitBox" Visibility="Hidden"  HorizontalAlignment="Right" Margin="0,524,50,-123" Width="267">
-                <xi:ImageButton Image="/Resources/Images/seting.png" x:Name="Seting" Click="Seting_Click" FontSize="23" FontWeight="Bold" Foreground="#B2A581" Content="设置" ImageHeight="60" ImageWidth="60" Width="100" Height="100" Margin="30,10,10,10"/>
-                <xi:ImageButton Image="/Resources/Images/quit.png" x:Name="Quit" Click="Quit_Click" FontSize="23" Foreground="#B2A581" FontWeight="Bold" Content="退出" ImageHeight="60" ImageWidth="60" Width="100" Height="100" Margin="30,10,10,10"/>
+            <StackPanel Orientation="Horizontal" Name="quitBox" Cursor="Hand" Visibility="Hidden"  HorizontalAlignment="Right" Margin="0,524,50,-123" Width="267">
+                <xi:ImageButton Image="/Resources/Images/seting.png" Cursor="Hand" x:Name="Seting" Click="Seting_Click" FontSize="23" FontWeight="Bold" Foreground="#B2A581" Content="设置" ImageHeight="60" ImageWidth="60" Width="100" Height="100" Margin="30,10,10,10"/>
+                <xi:ImageButton Image="/Resources/Images/quit.png" Cursor="Hand" x:Name="Quit" Click="Quit_Click" FontSize="23" Foreground="#B2A581" FontWeight="Bold" Content="退出" ImageHeight="60" ImageWidth="60" Width="100" Height="100" Margin="30,10,10,10"/>
             </StackPanel>
 
         </Grid>
