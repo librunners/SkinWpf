@@ -170,6 +170,9 @@
   <ItemGroup>
     <Content Include="bin\Debug\SkinWpf.exe" />
     <Content Include="bin\Debug\SkinWpf.pdb" />
+    <Resource Include="Resources\Images\query.png" />
+    <Resource Include="Resources\Images\pre.png" />
+    <Resource Include="Resources\Images\next.png" />
     <Resource Include="Resources\Images\cutmer.png" />
     <Resource Include="Resources\Images\quit.png" />
     <Resource Include="Resources\Images\seting.png" />

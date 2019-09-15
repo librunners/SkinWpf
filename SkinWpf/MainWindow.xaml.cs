@@ -90,7 +90,7 @@ namespace SkinWpf
                 this.logoImg.Visibility = Visibility.Hidden;
                 this.btnStar.Visibility = Visibility.Visible;
             }
-            if (timeNum == 9)
+            if (timeNum == 5)
             {
                 //隐藏提示内容 显示Logo 并且显示 右上角左下角按钮
                 this.load.IsRunning = false;
@@ -112,7 +112,11 @@ namespace SkinWpf
         /// <param name="e"></param>
         private void CusterManage_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("点击按钮干啥");
+            CustomManage custom = new CustomManage();
+            //custom.Owner = this;
+            custom.Show();
+            this.Close();
+         
         }
 
         /// <summary>
@@ -132,7 +136,9 @@ namespace SkinWpf
         /// <param name="e"></param>
         private void Quit_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("点击按钮干啥");
+            this.Close();
+            //App.Current.Shutdown();
+            Environment.Exit(0);
         }
     }
 }

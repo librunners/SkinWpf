@@ -3,10 +3,323 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:SkinWpf"
+        xmlns:pu="clr-namespace:Panuon.UI.Silver;assembly=Panuon.UI.Silver"
+        xmlns:xi="clr-namespace:SkinWpf"
         mc:Ignorable="d"
-        Title="CustomManage" Height="450" Width="800">
+        Title="CustomManage" Window.Loaded="Window_Loaded"  WindowStartupLocation="CenterScreen"  Style="{DynamicResource NoResize_Window}">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/SkinWpf;Component/Resources/Styles/Buttons.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <CollectionViewSource x:Key="ListUserInfoViewSource" />
+            <!--<CollectionViewSource x:Key="UserInfoViewSource" />-->
+
+            <Style x:Key="ButtonClose" TargetType="{x:Type Button}">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Grid>
+                                <Border x:Name="normal" 
+                               Width="39" Height="20"
+                               RenderTransformOrigin="0.5,0.5" CornerRadius="0,15,0,0" >
+                                    <Border.Background>
+                                        <ImageBrush ImageSource="/SkinWpf;component/Resources/Images/btn_close_normal.png" />
+                                    </Border.Background>
+                                    <Border.RenderTransform>
+                                        <TransformGroup>
+                                            <!--  在 二维 x-y 坐标系内缩放对象  -->
+                                            <ScaleTransform />
+                                            <!--  表示一种二维扭曲。  -->
+                                            <SkewTransform />
+                                            <!--  在 二维 x-y 坐标系内围绕指定点按照顺时针方向旋转对象。  -->
+                                            <RotateTransform />
+                                            <!--  在 二维 x-y 坐标系中平移（移动）对象。  -->
+                                            <TranslateTransform />
+                                        </TransformGroup>
+                                    </Border.RenderTransform>
+                                </Border>
+                                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                          Content=""
+                                          RecognizesAccessKey="True"
+                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                                <Border x:Name="highlight"  Width="{Binding Width, ElementName=normal}" Height="{Binding Height, ElementName=normal}" Opacity="0"
+                                     RenderTransformOrigin="{Binding RenderTransformOrigin, ElementName=normal}"  CornerRadius="{Binding CornerRadius, ElementName=normal}" >
+                                    <Border.Background>
+                                        <ImageBrush Stretch="Fill" ImageSource="/SkinWpf;component/Resources/Images/btn_close_highlight.png" />
+                                    </Border.Background>
+                                    <Border.RenderTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform />
+                                            <SkewTransform />
+                                            <RotateTransform />
+                                            <TranslateTransform />
+                                        </TransformGroup>
+                                    </Border.RenderTransform>
+                                </Border>
+                                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                              RecognizesAccessKey="True"
+                                              Content=""
+                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                                <Border x:Name="down" CornerRadius="{Binding CornerRadius, ElementName=normal}"
+                                Width="{Binding Width, ElementName=normal}" 
+                                Height="{Binding Height, ElementName=normal}" Opacity="0"
+                                RenderTransformOrigin="{Binding RenderTransformOrigin, ElementName=normal}">
+                                    <Border.Background>
+                                        <ImageBrush ImageSource="/SkinWpf;component/Resources/Images/btn_close_down.png" />
+                                    </Border.Background>
+                                    <Border.RenderTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform />
+                                            <SkewTransform />
+                                            <RotateTransform />
+                                            <TranslateTransform />
+                                        </TransformGroup>
+                                    </Border.RenderTransform>
+                                </Border>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsFocused" Value="True" />
+                                <Trigger Property="IsDefaulted" Value="True" />
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="highlight" Property="Opacity" Value="1" />
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter TargetName="down" Property="Opacity" Value="1" />
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter TargetName="normal" Property="RenderTransform">
+                                        <Setter.Value>
+                                            <TransformGroup>
+                                                <ScaleTransform ScaleX="0.8" ScaleY="0.8" />
+                                                <SkewTransform />
+                                                <RotateTransform />
+                                                <TranslateTransform />
+                                            </TransformGroup>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Setter TargetName="highlight" Property="RenderTransform">
+                                        <Setter.Value>
+                                            <TransformGroup>
+                                                <ScaleTransform />
+                                                <SkewTransform />
+                                                <RotateTransform />
+                                                <TranslateTransform />
+                                            </TransformGroup>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Setter TargetName="down" Property="RenderTransform">
+                                        <Setter.Value>
+                                            <TransformGroup>
+                                                <ScaleTransform />
+                                                <SkewTransform />
+                                                <RotateTransform />
+                                                <TranslateTransform />
+                                            </TransformGroup>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                                <Trigger Property="IsEnabled" Value="False" />
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style x:Key="ButtonMin" TargetType="{x:Type Button}">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Grid>
+                                <Image x:Name="mini_normal"
+                                   Width="28"
+                                   Height="20"
+                                   RenderTransformOrigin="0.5,0.5"
+                                   Source="/SkinWpf;component/Resources/Images/btn_mini_normal.png"
+                                   Stretch="Fill">
+                                    <Image.RenderTransform>
+                                        <TransformGroup>
+                                            <!--  在 二维 x-y 坐标系内缩放对象  -->
+                                            <ScaleTransform />
+                                            <!--  表示一种二维扭曲。  -->
+                                            <SkewTransform />
+                                            <!--  在 二维 x-y 坐标系内围绕指定点按照顺时针方向旋转对象。  -->
+                                            <RotateTransform />
+                                            <!--  在 二维 x-y 坐标系中平移（移动）对象。  -->
+                                            <TranslateTransform />
+                                        </TransformGroup>
+                                    </Image.RenderTransform>
+                                </Image>
+                                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                              Content=""
+                                              RecognizesAccessKey="True"
+                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                                <Image x:Name="mini_highlight"
+                                   Width="28"
+                                   Height="20"
+                                   Opacity="0"
+                                   RenderTransformOrigin="0.5,0.5"
+                                   Source="/SkinWpf;component/Resources/Images/btn_mini_highlight.png"
+                                   Stretch="Fill">
+                                    <Image.RenderTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform />
+                                            <SkewTransform />
+                                            <RotateTransform />
+                                            <TranslateTransform />
+                                        </TransformGroup>
+                                    </Image.RenderTransform>
+                                </Image>
+                                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                              Content=""
+                                              RecognizesAccessKey="True"
+                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                                <Image x:Name="mini_down"
+                                   Width="28"
+                                   Height="20"
+                                   Opacity="0"
+                                   RenderTransformOrigin="0.5,0.5"
+                                   Source="/SkinWpf;component/Resources/Images/btn_mini_down.png"
+                                   Stretch="Fill">
+                                    <Image.RenderTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform />
+                                            <SkewTransform />
+                                            <RotateTransform />
+                                            <TranslateTransform />
+                                        </TransformGroup>
+                                    </Image.RenderTransform>
+                                </Image>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsFocused" Value="True" />
+                                <Trigger Property="IsDefaulted" Value="True" />
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="mini_highlight" Property="Opacity" Value="1" />
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter TargetName="mini_down" Property="Opacity" Value="1" />
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter TargetName="mini_normal" Property="RenderTransform">
+                                        <Setter.Value>
+                                            <TransformGroup>
+                                                <ScaleTransform ScaleX="0.8" ScaleY="0.8" />
+                                                <SkewTransform />
+                                                <RotateTransform />
+                                                <TranslateTransform />
+                                            </TransformGroup>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Setter TargetName="mini_highlight" Property="RenderTransform">
+                                        <Setter.Value>
+                                            <TransformGroup>
+                                                <ScaleTransform />
+                                                <SkewTransform />
+                                                <RotateTransform />
+                                                <TranslateTransform />
+                                            </TransformGroup>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Setter TargetName="mini_down" Property="RenderTransform">
+                                        <Setter.Value>
+                                            <TransformGroup>
+                                                <ScaleTransform />
+                                                <SkewTransform />
+                                                <RotateTransform />
+                                                <TranslateTransform />
+                                            </TransformGroup>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                                <Trigger Property="IsEnabled" Value="False" />
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <!--无边框窗体+特殊样式-->
+            <Style x:Key="NoResize_Window" TargetType="{x:Type Window}">
+                <Setter Property="ShowInTaskbar" Value="False" />
+                <Setter Property="AllowsTransparency" Value="True" />
+                <Setter Property="Background" Value="Transparent" />
+                <Setter Property="FontFamily" Value="Consolas,Microsoft YaHei" />
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="ResizeMode" Value="NoResize" />
+                <Setter Property="WindowStyle" Value="None" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Window}">
+                            <Grid Background="Transparent"  MouseDown="Window_MouseDown">
+                                <Border CornerRadius="10" Height="{TemplateBinding Height}" 
+                                    Width="{TemplateBinding Width}" >
+                                    <Border.Background>
+                                        <ImageBrush ImageSource="/SkinWpf;component/Resources/Images/login.jpg" />
+                                    </Border.Background>
+                                    <!--<Border.Effect>
+                                    <DropShadowEffect BlurRadius="20" ShadowDepth="0" Color="#FF898989"/>
+                                </Border.Effect>-->
+                                </Border>
+                                <!-- <Rectangle Fill="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" RadiusX="10" RadiusY="10">
+                                <Rectangle.Effect>
+                                    <DropShadowEffect BlurRadius="10" ShadowDepth="5" Color="#FF898989" />
+                                </Rectangle.Effect>
+                            </Rectangle>-->
+                                <!--<TextBox Width="200" Height="20" Text="{TemplateBinding Self}" HorizontalAlignment="Left" VerticalAlignment="Top" />-->
+                                <Button x:Name="BtnClose" Margin="0,-1.5,-1,0" Style="{DynamicResource ButtonClose}"
+                              HorizontalAlignment="Right" VerticalAlignment="Top" Click="BtnClose_Click" />
+                                <Button x:Name="BtnMin"
+                    Margin="0,-1.5,38,0"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Top"
+                    Style="{DynamicResource ButtonMin}" Click="BtnMin_Click" />
+                                <Grid Margin="0,29.33,0,0">
+                                    <Border Background="{TemplateBinding Background}"
+                              BorderBrush="{TemplateBinding BorderBrush}"  
+                              BorderThickness="{TemplateBinding BorderThickness}"
+                              Padding="{TemplateBinding Margin}"
+                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                              CornerRadius="10"  >
+                                        <ContentPresenter />
+                                    </Border>
+                                </Grid>
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+        </ResourceDictionary>
+    </Window.Resources>
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="120"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="270"></ColumnDefinition>
+            <ColumnDefinition Width="100"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Border Grid.Row="0" Grid.ColumnSpan="3"
+        BorderThickness="1,118,0,0" Background="#B2A581" />
+        <Image  Grid.Row="0" Grid.Column="0" Width="270" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" x:Name="logoImg" Source="/SkinWpf;component/Resources/Images/logo.jpg" />
+
+
+
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" Grid.Row="0" Grid.Column="2" Name="ImgBox" Visibility="Visible"  HorizontalAlignment="Right">
+            <TextBox  Height="50" Width="260" 
+                      pu:TextBoxHelper.Watermark="请输入客户名称"
+                      pu:TextBoxHelper.FocusedBorderBrush="#B2A581"
+                      pu:TextBoxHelper.FocusedShadowColor="#B2A581"
+                      pu:TextBoxHelper.CornerRadius="14" />
+            <xi:ImageButton Image="/Resources/Images/query.png" Cursor="Hand" x:Name="StepQuery" Click="StepQuery_Click" FontSize="23" FontWeight="Bold" Foreground="#B2A581" Content="查询" ImageHeight="60" ImageWidth="60" Width="100" Height="100" Margin="30,10,10,10"/>
+            <xi:ImageButton Image="/Resources/Images/pre.png" Cursor="Hand" x:Name="StepPre" Click="StepPre_Click"  FontSize="23" FontWeight="Bold" Foreground="#B2A581" Content="返回" ImageHeight="60" ImageWidth="60" Width="100" Height="100" Margin="30,10,10,10"/>
+            <xi:ImageButton Image="/Resources/Images/next.png" Cursor="Hand" x:Name="StepNext" Click="StepNext_Click" FontSize="23" Foreground="#B2A581" FontWeight="Bold" Content="下一步" ImageHeight="60" ImageWidth="60" Width="100" Height="100" Margin="30,10,10,10"/>
+        </StackPanel>
+
     </Grid>
 </Window>
