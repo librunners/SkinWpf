@@ -325,6 +325,7 @@
                 <DataGridTemplateColumn Header="年龄" Width="*" Binding="{Age}"/>
                 <DataGridTemplateColumn Header="添加时间" Width="*" Binding="{CreateTime}"/>
                 <DataGridTemplateColumn Header="操作" Width="*"/>
+        
             </DataGrid.Columns>
         </DataGrid>-->
     </Grid>
