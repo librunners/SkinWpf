@@ -1,0 +1,36 @@
+﻿<Window x:Class="SkinWpf.CustomerList"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:pu="clr-namespace:Panuon.UI.Silver;assembly=Panuon.UI.Silver"
+        xmlns:local="clr-namespace:SkinWpf"
+        mc:Ignorable="d"
+        Title="客户列表" Height="450" Width="800">
+    <Grid>
+        <DataGrid Name="DataGridV"  Width="450"
+                   Height="300"
+                   pu:DataGridHelper.HeaderMinHeight="51"
+                   pu:DataGridHelper.RowMinHeight="41"
+                   pu:DataGridHelper.SelectedBackground="#440084FF"
+                   pu:DataGridHelper.HoverBackground="#220084FF" >
+            <pu:DataGridHelper.AutoGenerateCheckBoxStyle>
+                <Style TargetType="CheckBox"
+                       BasedOn="{StaticResource {x:Type CheckBox}}">
+                    <Setter Property="pu:CheckBoxHelper.CheckBoxStyle"
+                            Value="Switch" />
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Path=(pu:CheckBoxHelper.CheckBoxStyle),RelativeSource={RelativeSource Self}}"
+                                     Value="Switch">
+                            <Setter Property="pu:CheckBoxHelper.CheckedBackground"
+                                    Value="#72C81F" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </pu:DataGridHelper.AutoGenerateCheckBoxStyle>
+        </DataGrid>
+        <pu:Pagination CurrentIndexChanged="PaginationName_OnCurrentIndexChanged" Name="PaginationName"  Height="28"
+                       Background="#963F3F3F"
+                       HoverBrush="#FF3F3F3F" />
+    </Grid>
+</Window>
