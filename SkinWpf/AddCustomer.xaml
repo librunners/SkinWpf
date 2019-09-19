@@ -60,6 +60,7 @@
                      Background="#C83F3F3F"
                      pu:ButtonHelper.HoverBrush="#3F3F3F"
                      pu:ButtonHelper.CornerRadius="4" Margin="39,10,181,1" />
+            <Button Click="Button_Click_1">测试</Button>
         </Grid>
     </Grid>
 </Window>

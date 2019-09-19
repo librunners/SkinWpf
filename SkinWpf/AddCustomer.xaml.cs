@@ -29,5 +29,13 @@ namespace SkinWpf
         {
 
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            StartPicture sp = new StartPicture();
+            //custom.Owner = this;
+            sp.Show();
+            this.Close();
+        }
     }
 }

@@ -298,6 +298,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="120"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="270"></ColumnDefinition>
@@ -314,19 +315,34 @@
                       pu:TextBoxHelper.FocusedShadowColor="#B2A581"
                       pu:TextBoxHelper.CornerRadius="14" />
             <xi:ImageButton Image="/Resources/Images/query.png" Cursor="Hand" x:Name="StepQuery" Click="StepQuery_Click" FontSize="23" FontWeight="Bold" Foreground="#B2A581" Content="查询" ImageHeight="60" ImageWidth="60" Width="100" Height="100" Margin="30,10,10,10"/>
+            <xi:ImageButton Image="/Resources/Images/add.png" Cursor="Hand" x:Name="StepAdd" Click="StepAdd_Click"  FontSize="23" FontWeight="Bold" Foreground="#B2A581" Content="添加" ImageHeight="60" ImageWidth="60" Width="100" Height="100" Margin="30,10,10,10"/>
             <xi:ImageButton Image="/Resources/Images/pre.png" Cursor="Hand" x:Name="StepPre" Click="StepPre_Click"  FontSize="23" FontWeight="Bold" Foreground="#B2A581" Content="返回" ImageHeight="60" ImageWidth="60" Width="100" Height="100" Margin="30,10,10,10"/>
             <xi:ImageButton Image="/Resources/Images/next.png" Cursor="Hand" x:Name="StepNext" Click="StepNext_Click" FontSize="23" Foreground="#B2A581" FontWeight="Bold" Content="下一步" ImageHeight="60" ImageWidth="60" Width="100" Height="100" Margin="30,10,10,10"/>
         </StackPanel>
-        <!--<DataGrid x:Name="dgvCustomer" Grid.Row="1" Grid.ColumnSpan="2" IsReadOnly="True" AlternationCount="2" AutoGenerateColumns="False">
-            <DataGrid.Columns>
-                <DataGridTemplateColumn Header="用户名" Width="*" Binding="{Binding path=UserName}"/>
-                <DataGridTemplateColumn Header="手机号" Width="*" Binding="{Phone}"/>
-                <DataGridTemplateColumn Header="性别" Width="*" Binding="{Binding Sex, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                <DataGridTemplateColumn Header="年龄" Width="*" Binding="{Age}"/>
-                <DataGridTemplateColumn Header="添加时间" Width="*" Binding="{CreateTime}"/>
-                <DataGridTemplateColumn Header="操作" Width="*"/>
-        
-            </DataGrid.Columns>
-        </DataGrid>-->
+        <DataGrid Name="DataGridV" Grid.Row="1" Grid.Column="0" Background="#963F3F3F"  Grid.ColumnSpan="2"            
+                   pu:DataGridHelper.HeaderMinHeight="51"
+                   pu:DataGridHelper.RowMinHeight="41"
+                   pu:DataGridHelper.SelectedBackground="#440084FF"
+                   pu:DataGridHelper.HoverBackground="#220084FF" Margin="0,10,0,-10" >
+            <pu:DataGridHelper.AutoGenerateCheckBoxStyle>
+                <Style TargetType="CheckBox"
+                       BasedOn="{StaticResource {x:Type CheckBox}}">
+                    <Setter Property="pu:CheckBoxHelper.CheckBoxStyle"
+                            Value="Switch" />
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Path=(pu:CheckBoxHelper.CheckBoxStyle),RelativeSource={RelativeSource Self}}"
+                                     Value="Switch">
+                            <Setter Property="pu:CheckBoxHelper.CheckedBackground"
+                                    Value="#72C81F" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </pu:DataGridHelper.AutoGenerateCheckBoxStyle>
+        </DataGrid>
+        <pu:Pagination CurrentIndexChanged="PaginationName_CurrentIndexChanged" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"  Name="PaginationName"  Height="30"
+                       Background="#963F3F3F"
+                       HoverBrush="#FF3F3F3F" />
+
+       
     </Grid>
 </Window>

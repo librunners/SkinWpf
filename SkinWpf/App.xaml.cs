@@ -16,13 +16,13 @@ namespace SkinWpf
     {
         public App()
         {
-            //Initial();
-            //this.Exit += new ExitEventHandler(App_Exit);
+            Initial();
+            this.Exit += new ExitEventHandler(App_Exit);
         }
 
         void App_Exit(object sender, ExitEventArgs e)
         {
-            //setFreeNotifyIcon();
+            setFreeNotifyIcon();
         }
 
 

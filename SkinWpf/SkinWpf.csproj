@@ -191,6 +191,13 @@
   <ItemGroup>
     <Content Include="bin\Debug\SkinWpf.exe" />
     <Content Include="bin\Debug\SkinWpf.pdb" />
+    <Resource Include="Resources\Images\check.png" />
+    <Resource Include="Resources\Images\close.png" />
+    <Resource Include="Resources\Images\pic.png" />
+    <Resource Include="Resources\Images\face1.jpg" />
+    <Resource Include="Resources\Images\face2.jpg" />
+    <Resource Include="Resources\Images\face3.jpg" />
+    <Resource Include="Resources\Images\add.png" />
     <Resource Include="Resources\Images\query.png" />
     <Resource Include="Resources\Images\pre.png" />
     <Resource Include="Resources\Images\next.png" />
