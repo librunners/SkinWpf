@@ -63,6 +63,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DataGridTestModel.cs" />
     <Compile Include="MaquillageManage.xaml.cs">
       <DependentUpon>MaquillageManage.xaml</DependentUpon>
     </Compile>
@@ -70,10 +71,6 @@
       <DependentUpon>StartPicture.xaml</DependentUpon>
     </Compile>
     <Page Include="AddCustomer.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="CustomerList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -92,9 +89,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="CustomerList.xaml.cs">
-      <DependentUpon>CustomerList.xaml</DependentUpon>
-    </Compile>
     <Compile Include="CustomManage.xaml.cs">
       <DependentUpon>CustomManage.xaml</DependentUpon>
     </Compile>
@@ -104,10 +98,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="MaquillageManage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Menu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -165,9 +155,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Menu.xaml.cs">
-      <DependentUpon>Menu.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -198,6 +185,11 @@
   <ItemGroup>
     <Content Include="bin\Debug\SkinWpf.exe" />
     <Content Include="bin\Debug\SkinWpf.pdb" />
+    <Resource Include="Resources\Images\start.png" />
+    <Resource Include="Resources\Images\toumiing.png" />
+    <Resource Include="Resources\Images\lougou.png" />
+    <Resource Include="Resources\Images\radio-no.png" />
+    <Resource Include="Resources\Images\radio-on.png" />
     <Resource Include="Resources\Images\huazhuangp.png" />
     <Resource Include="Resources\Images\tu.png" />
     <Resource Include="Resources\Images\yanjing.jpg" />
@@ -215,7 +207,6 @@
     <Resource Include="Resources\Images\quit.png" />
     <Resource Include="Resources\Images\seting.png" />
     <Resource Include="ShareWork.ico" />
-    <Resource Include="Resources\Images\logo.jpg" />
     <Resource Include="Resources\Images\login.jpg" />
     <Resource Include="Resources\Images\btn_close_down.png" />
     <Resource Include="Resources\Images\btn_close_highlight.png" />

@@ -307,7 +307,7 @@
         </Grid.ColumnDefinitions>
         <Border Grid.Row="0" Grid.ColumnSpan="2"
         BorderThickness="1,118,0,0" Background="#B2A581" />
-        <Image  Grid.Row="0" Grid.Column="0" Width="270" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" x:Name="logoImg" Source="/SkinWpf;component/Resources/Images/logo.jpg" />
+        <Image  Grid.Row="0" Grid.Column="0" Width="270" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" x:Name="logoImg" Source="/SkinWpf;component/Resources/Images/toumiing.png" />
 
         <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" Grid.Row="0" Grid.Column="2" Name="ImgBox" Visibility="Visible"  HorizontalAlignment="Right">
             <TextBox  Height="50" Width="260" 

@@ -294,6 +294,27 @@
                 </Setter>
             </Style>
 
+
+            <Style x:Key="radBase" TargetType="RadioButton">
+                <Setter Property="IsChecked" Value="False"/>
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="Foreground" Value="#555"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="RadioButton">
+                            <DockPanel  Background="{TemplateBinding Background}" ToolTip="{TemplateBinding Content}" LastChildFill="False" Width="{TemplateBinding Width}">
+                                <Image Margin="2 0 0 0" DockPanel.Dock="Left" x:Name="_img"  Stretch="None" Source="/SkinWpf;component/Resources/Images/radio-no.png"/>
+                                <TextBlock DockPanel.Dock="Left" Margin="3 0 0 0" VerticalAlignment="Center" Foreground="{TemplateBinding Foreground}" Text="{TemplateBinding Content}" />
+                            </DockPanel>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsChecked" Value="true">
+                                    <Setter TargetName="_img" Property="Source" Value="/SkinWpf;component/Resources/Images/radio-on.png"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
         </ResourceDictionary>
     </Window.Resources>
 
@@ -342,7 +363,7 @@
         </Grid.ColumnDefinitions>
         <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="22"
         BorderThickness="1,89,0,0" Background="#B2A581" />
-        <Image  Grid.Row="0" Grid.ColumnSpan="3" Width="270" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" x:Name="logoImg" Source="/SkinWpf;component/Resources/Images/logo.jpg" />
+        <Image  Grid.Row="0" Grid.ColumnSpan="3" Width="270" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" x:Name="logoImg" Source="/SkinWpf;component/Resources/Images/toumiing.png" />
 
 
         <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" Grid.Row="0" Grid.ColumnSpan="4" Grid.Column="17" Name="ImgBox2" Visibility="Visible"  HorizontalAlignment="Right" Width="230">
@@ -459,21 +480,8 @@ Background="#FF0011" />
                 </Style>
             </TextBox.Style>
         </TextBox>
-
-        <CheckBox  Height="30" Grid.Row="5" Grid.RowSpan="2"  Grid.Column="8" Name="txtSexNan"  FontSize="25"
-Content="男"
-Background="#323F3F3F"
-pu:RadioButtonHelper.BoxHeight="40"
-pu:RadioButtonHelper.BoxWidth="40"
-pu:RadioButtonHelper.CheckedBackground="#3F3F3F" />
-        <CheckBox  Height="30" Grid.Row="5" Grid.RowSpan="2"  Grid.Column="11" Name="txtSexNv" FontSize="25"
-Content="女"
-Background="#323F3F3F"
-pu:RadioButtonHelper.BoxHeight="40"
-pu:RadioButtonHelper.BoxWidth="40"
-pu:RadioButtonHelper.CheckedBackground="#3F3F3F" />
-
-
+        <RadioButton x:Name="txtSexNan" Content="男" IsChecked="True"  Style="{DynamicResource radBase}" Height="30" Grid.Row="5" Grid.RowSpan="2"  Grid.Column="8"  FontSize="25" />
+        <RadioButton Content="女" Style="{DynamicResource radBase}" Height="30" Grid.Row="5" Grid.RowSpan="2"  Grid.Column="11" Name="txtSexNv" FontSize="25" />
 
     </Grid>
 </Window>

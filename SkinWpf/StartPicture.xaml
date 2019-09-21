@@ -340,11 +340,11 @@
         </Grid.ColumnDefinitions>
         <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="22"
         BorderThickness="1,89,0,0" Background="#B2A581" />
-        <Image  Grid.Row="0" Grid.ColumnSpan="3" Width="270" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" x:Name="logoImg" Source="/SkinWpf;component/Resources/Images/logo.jpg" />
+        <Image  Grid.Row="0" Grid.ColumnSpan="3" Width="270" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" x:Name="logoImg" Source="/SkinWpf;component/Resources/Images/toumiing.png" />
 
         <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" Grid.Row="0"  Grid.ColumnSpan="3" Grid.Column="18" Name="ImgBox1" Visibility="Hidden"  HorizontalAlignment="Right" Width="260" Margin="0,0,8,0">
-            <xi:ImageButton Image="/Resources/Images/close.png" Grid.Row="0" Grid.Column="21"  Cursor="Hand" x:Name="StepErr" Click="StepErr_Click"  FontSize="15" FontWeight="Bold" Foreground="#B2A581" Content="上一步" ImageHeight="60" ImageWidth="60" Width="100"/>
-            <local:ImageButton Image="/Resources/Images/check.png" Grid.Row="0" Grid.Column="20"  Cursor="Hand" x:Name="StepOk" Click="StepOk_Click"  FontSize="15" Foreground="#B2A581" FontWeight="Bold" Content="开始分析" ImageHeight="60" ImageWidth="60" Width="100"/>
+            <xi:ImageButton Image="/Resources/Images/pre.png" Grid.Row="0" Grid.Column="21"  Cursor="Hand" x:Name="StepErr" Click="StepErr_Click"  FontSize="15" FontWeight="Bold" Foreground="#B2A581" Content="上一步" ImageHeight="60" ImageWidth="60" Width="100"/>
+            <local:ImageButton Image="/Resources/Images/start.png" Grid.Row="0" Grid.Column="20"  Cursor="Hand" x:Name="StepOk" Click="StepOk_Click"  FontSize="15" Foreground="#B2A581" FontWeight="Bold" Content="开始分析" ImageHeight="60" ImageWidth="60" Width="100"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" Grid.Row="0" Grid.ColumnSpan="3" Grid.Column="18" Name="ImgBox2" Visibility="Visible"  HorizontalAlignment="Right" Width="260">
             <xi:ImageButton Image="/Resources/Images/pre.png" Grid.Row="0" Grid.Column="21"  Cursor="Hand" x:Name="StepPre" Click="StepPre_Click"  FontSize="15" FontWeight="Bold" Foreground="#B2A581" Content="上一步" ImageHeight="60" ImageWidth="60" Width="100"/>

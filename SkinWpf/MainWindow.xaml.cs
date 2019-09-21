@@ -44,9 +44,11 @@ namespace SkinWpf
         /// <param name="e"></param>
         private void BtnClose_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
-            //App.Current.Shutdown();
-            Environment.Exit(0);
+            if (MessageBox.Show("确定退出系统?", "提示!", MessageBoxButton.YesNo, MessageBoxImage.Information) == MessageBoxResult.Yes)
+            {
+                this.Close();
+                Environment.Exit(0);
+            }
         }
         /// <summary>
         /// 窗体最小化
@@ -83,24 +85,15 @@ namespace SkinWpf
         private void Timer_Tick(object sender, EventArgs e)
         {
             timeNum++;
-            if (timeNum == 3)
+            if (timeNum == 2)
             {
-                //隐藏logo  显示“程序正在启动...”
-                this.load.IsRunning = true;
-                this.logoImg.Visibility = Visibility.Hidden;
-                //this.btnStar.Visibility = Visibility.Visible;
-            }
-            if (timeNum == 5)
-            {
-                //隐藏提示内容 显示Logo 并且显示 右上角左下角按钮
                 this.load.IsRunning = false;
                 this.logoImg.Visibility = Visibility.Visible;
-                //this.btnStar.Visibility = Visibility.Hidden;
                 //显示按钮
                 this.custerManageBox.Visibility = Visibility.Visible;
                 timer.Stop();
-                
             }
+
 
         }
 
@@ -135,8 +128,12 @@ namespace SkinWpf
         /// <param name="e"></param>
         private void Quit_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
-            Environment.Exit(0);
+            if (MessageBox.Show("确定退出系统?", "提示!", MessageBoxButton.YesNo, MessageBoxImage.Information) == MessageBoxResult.Yes)
+            {
+                this.Close();
+                Environment.Exit(0);
+            }
+           
         }
 
         /// <summary>

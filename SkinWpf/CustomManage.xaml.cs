@@ -111,9 +111,11 @@ namespace SkinWpf
         /// <param name="e"></param>
         private void BtnClose_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
-            //App.Current.Shutdown();
-            Environment.Exit(0);
+            if (MessageBox.Show("确定退出系统?", "提示!", MessageBoxButton.YesNo, MessageBoxImage.Information) == MessageBoxResult.Yes)
+            {
+                this.Close();
+                Environment.Exit(0);
+            }
         }
         /// <summary>
         /// 窗体最小化
@@ -188,15 +190,4 @@ namespace SkinWpf
         }
     }
 
-    //public class DataGridTestModel
-    //{
-    //    public int Id { get; set; }
-
-    //    public string Name { get; set; }
-
-
-    //    public bool IsEnabled { get; set; }
-
-    //    public int Score { get; set; }
-    //}
 }
