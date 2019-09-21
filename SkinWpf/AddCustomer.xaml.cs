@@ -24,6 +24,56 @@ namespace SkinWpf
         {
             InitializeComponent();
         }
+        #region 界面元素操作
+        /// <summary>
+        /// 禁止窗体移动
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            //if (e.ChangedButton == MouseButton.Left) this.DragMove();
+        }
+        /// <summary>
+        /// 关闭窗体
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BtnClose_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            //App.Current.Shutdown();
+            Environment.Exit(0);
+        }
+        /// <summary>
+        /// 窗体最小化
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BtnMin_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = System.Windows.WindowState.Minimized;
+        }
+
+        /// <summary>
+        /// 设置最大化
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            // 设置全屏
+            this.WindowState = System.Windows.WindowState.Normal;
+            this.WindowStyle = System.Windows.WindowStyle.None;
+            this.ResizeMode = System.Windows.ResizeMode.NoResize;
+            this.Topmost = true;
+
+            this.Left = 0.0;
+            this.Top = 0.0;
+            this.Width = System.Windows.SystemParameters.PrimaryScreenWidth;
+            this.Height = System.Windows.SystemParameters.PrimaryScreenHeight;
+        }
+        #endregion
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -36,6 +86,21 @@ namespace SkinWpf
             //custom.Owner = this;
             sp.Show();
             this.Close();
+        }
+
+        private void StepPre_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void StartSercher_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void StartNext_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

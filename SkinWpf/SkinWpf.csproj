@@ -191,6 +191,8 @@
   <ItemGroup>
     <Content Include="bin\Debug\SkinWpf.exe" />
     <Content Include="bin\Debug\SkinWpf.pdb" />
+    <Resource Include="Resources\Images\tu.png" />
+    <Resource Include="Resources\Images\yanjing.jpg" />
     <Resource Include="Resources\Images\check.png" />
     <Resource Include="Resources\Images\close.png" />
     <Resource Include="Resources\Images\pic.png" />
@@ -216,9 +218,6 @@
     <Resource Include="Resources\Images\checked.png" />
     <Resource Include="Resources\Images\checked_close.png" />
     <Resource Include="Resources\Images\checked_ed.png" />
-    <Resource Include="Resources\Images\cloud.png" />
-    <Resource Include="Resources\Images\登陆彩条.png" />
-    <Resource Include="Resources\Images\移动彩条.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Release\" />

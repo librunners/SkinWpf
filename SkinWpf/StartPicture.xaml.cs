@@ -54,6 +54,24 @@ namespace SkinWpf
             this.WindowState = System.Windows.WindowState.Minimized;
         }
 
+        /// <summary>
+        /// 设置最大化
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            // 设置全屏
+            this.WindowState = System.Windows.WindowState.Normal;
+            this.WindowStyle = System.Windows.WindowStyle.None;
+            this.ResizeMode = System.Windows.ResizeMode.NoResize;
+            this.Topmost = true;
+
+            this.Left = 0.0;
+            this.Top = 0.0;
+            this.Width = System.Windows.SystemParameters.PrimaryScreenWidth;
+            this.Height = System.Windows.SystemParameters.PrimaryScreenHeight;
+        }
         #endregion
 
         /// <summary>
@@ -65,6 +83,17 @@ namespace SkinWpf
         {
             this.ImgBox2.Visibility = Visibility.Hidden;
             this.ImgBox1.Visibility = Visibility.Visible;
+
+            //隐藏左边三个图片，显示最左上角一个图片
+            this.LeftTop.Visibility = Visibility.Visible;
+
+            this.LeftTopImg.Visibility = Visibility.Hidden;
+            this.LeftCenterImg.Visibility = Visibility.Hidden;
+            this.leftBottomImg.Visibility = Visibility.Hidden;
+            //并且显示右边三张图片
+            this.RightTopImg.Visibility = Visibility.Visible;
+            this.RightCenterImg.Visibility = Visibility.Visible;
+            this.RightBottomImg.Visibility = Visibility.Visible;
         }
 
         /// <summary>
@@ -84,7 +113,7 @@ namespace SkinWpf
         /// <param name="e"></param>
         private void StepOk_Click(object sender, RoutedEventArgs e)
         {
-
+           
         }
 
         /// <summary>
@@ -97,18 +126,6 @@ namespace SkinWpf
 
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            // 设置全屏
-            this.WindowState = System.Windows.WindowState.Normal;
-            this.WindowStyle = System.Windows.WindowStyle.None;
-            this.ResizeMode = System.Windows.ResizeMode.NoResize;
-            this.Topmost = true;
-
-            this.Left = 0.0;
-            this.Top = 0.0;
-            this.Width = System.Windows.SystemParameters.PrimaryScreenWidth;
-            this.Height = System.Windows.SystemParameters.PrimaryScreenHeight;
-        }
+    
     }
 }
