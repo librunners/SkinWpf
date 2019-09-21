@@ -351,6 +351,13 @@
             <local:ImageButton Image="/Resources/Images/next.png" Cursor="Hand" Grid.Row="0" Grid.Column="20" x:Name="StartNext" Click="StartNext_Click"  FontSize="15" Foreground="#B2A581" FontWeight="Bold" Content="下一步" ImageHeight="60" ImageWidth="60" Width="100"/>
         </StackPanel>
 
+        <pu:Badge Height="5" Width="5" Grid.Row="3"  Grid.Column="9"
+HorizontalAlignment="Right"
+VerticalAlignment="Top"
+Margin="5,-1"
+IsWaving="True"
+Text="*"
+Background="#FF0011" />
         <TextBox Width="240" Height="40"  Grid.Row="2"  Grid.Column="7" VerticalAlignment="Center" Grid.RowSpan="2" Grid.ColumnSpan="3">
             <TextBox.Resources>
                 <VisualBrush x:Key="HintText" TileMode="None" Opacity="0.5" Stretch="None"  AlignmentX="Left">
@@ -372,6 +379,14 @@
                 </Style>
             </TextBox.Style>
         </TextBox>
+
+        <pu:Badge Height="5" Width="5" Grid.Row="3"  Grid.Column="12"
+HorizontalAlignment="Right"
+VerticalAlignment="Top"
+Margin="5,-1"
+IsWaving="True"
+Text="*"
+Background="#FF0011" />
         <TextBox Width="240" Height="40"  Grid.Row="2" Grid.RowSpan="2"  Grid.Column="10" Name="txtPhone" VerticalAlignment="Center" Grid.ColumnSpan="3">
             <TextBox.Resources>
                 <VisualBrush x:Key="HintText" TileMode="None" Opacity="0.5" Stretch="None"  AlignmentX="Left">
@@ -394,7 +409,13 @@
             </TextBox.Style>
         </TextBox>
 
-
+        <pu:Badge Height="5" Width="5" Grid.Row="5"  Grid.Column="9"
+HorizontalAlignment="Right"
+VerticalAlignment="Top"
+Margin="5,-1"
+IsWaving="True"
+Text="*"
+Background="#FF0011" />
         <TextBox Width="240" Height="40"  Grid.Row="4" Grid.RowSpan="2"  Grid.Column="7" VerticalAlignment="Center" Grid.ColumnSpan="3">
             <TextBox.Resources>
                 <VisualBrush x:Key="HintText" TileMode="None" Opacity="0.5" Stretch="None"  AlignmentX="Left">

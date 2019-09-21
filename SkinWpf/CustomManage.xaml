@@ -317,7 +317,7 @@
             <xi:ImageButton Image="/Resources/Images/query.png" Cursor="Hand" x:Name="StepQuery" Click="StepQuery_Click" FontSize="23" FontWeight="Bold" Foreground="#B2A581" Content="查询" ImageHeight="60" ImageWidth="60" Width="100" Height="100" Margin="30,10,10,10"/>
             <xi:ImageButton Image="/Resources/Images/add.png" Cursor="Hand" x:Name="StepAdd" Click="StepAdd_Click"  FontSize="23" FontWeight="Bold" Foreground="#B2A581" Content="添加" ImageHeight="60" ImageWidth="60" Width="100" Height="100" Margin="30,10,10,10"/>
             <xi:ImageButton Image="/Resources/Images/pre.png" Cursor="Hand" x:Name="StepPre" Click="StepPre_Click"  FontSize="23" FontWeight="Bold" Foreground="#B2A581" Content="返回" ImageHeight="60" ImageWidth="60" Width="100" Height="100" Margin="30,10,10,10"/>
-            <xi:ImageButton Image="/Resources/Images/next.png" Cursor="Hand" x:Name="StepNext" Click="StepNext_Click" FontSize="23" Foreground="#B2A581" FontWeight="Bold" Content="下一步" ImageHeight="60" ImageWidth="60" Width="100" Height="100" Margin="30,10,10,10"/>
+            <!--<xi:ImageButton Image="/Resources/Images/next.png" Cursor="Hand" x:Name="StepNext" Click="StepNext_Click" FontSize="23" Foreground="#B2A581" FontWeight="Bold" Content="下一步" ImageHeight="60" ImageWidth="60" Width="100" Height="100" Margin="30,10,10,10"/>-->
         </StackPanel>
         <DataGrid Name="DataGridV" Grid.Row="1" Grid.Column="0" Background="#963F3F3F"  Grid.ColumnSpan="2"            
                    pu:DataGridHelper.HeaderMinHeight="51"

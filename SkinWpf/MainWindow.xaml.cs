@@ -88,17 +88,16 @@ namespace SkinWpf
                 //隐藏logo  显示“程序正在启动...”
                 this.load.IsRunning = true;
                 this.logoImg.Visibility = Visibility.Hidden;
-                this.btnStar.Visibility = Visibility.Visible;
+                //this.btnStar.Visibility = Visibility.Visible;
             }
             if (timeNum == 5)
             {
                 //隐藏提示内容 显示Logo 并且显示 右上角左下角按钮
                 this.load.IsRunning = false;
                 this.logoImg.Visibility = Visibility.Visible;
-                this.btnStar.Visibility = Visibility.Hidden;
+                //this.btnStar.Visibility = Visibility.Hidden;
                 //显示按钮
                 this.custerManageBox.Visibility = Visibility.Visible;
-                this.quitBox.Visibility = Visibility.Visible;
                 timer.Stop();
                 
             }
@@ -137,8 +136,18 @@ namespace SkinWpf
         private void Quit_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
-            //App.Current.Shutdown();
             Environment.Exit(0);
+        }
+
+        /// <summary>
+        /// 化妆品管理
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MaquillageManage_Click(object sender, RoutedEventArgs e)
+        {
+            MaquillageManage MaquillageManage = new MaquillageManage();
+            MaquillageManage.Show();
         }
     }
 }

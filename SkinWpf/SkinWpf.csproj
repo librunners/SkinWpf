@@ -63,6 +63,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="MaquillageManage.xaml.cs">
+      <DependentUpon>MaquillageManage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="StartPicture.xaml.cs">
       <DependentUpon>StartPicture.xaml</DependentUpon>
     </Compile>
@@ -100,6 +103,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MaquillageManage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Menu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -191,6 +198,7 @@
   <ItemGroup>
     <Content Include="bin\Debug\SkinWpf.exe" />
     <Content Include="bin\Debug\SkinWpf.pdb" />
+    <Resource Include="Resources\Images\huazhuangp.png" />
     <Resource Include="Resources\Images\tu.png" />
     <Resource Include="Resources\Images\yanjing.jpg" />
     <Resource Include="Resources\Images\check.png" />
