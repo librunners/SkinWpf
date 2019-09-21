@@ -88,19 +88,38 @@ namespace SkinWpf
             this.Close();
         }
 
+        /// <summary>
+        /// 上一步
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void StepPre_Click(object sender, RoutedEventArgs e)
         {
-
+            CustomManage CustomManage = new CustomManage();
+            CustomManage.Show();
+            this.Close();
         }
 
+        /// <summary>
+        /// 搜索按钮
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void StartSercher_Click(object sender, RoutedEventArgs e)
         {
 
         }
+        /// <summary>
+        /// 下一步  开始拍照
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
         private void StartNext_Click(object sender, RoutedEventArgs e)
         {
-
+            StartPicture pic = new StartPicture();
+            pic.Show();
+            this.Close();
         }
     }
 }

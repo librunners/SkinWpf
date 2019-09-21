@@ -115,7 +115,7 @@ namespace SkinWpf
             CustomManage custom = new CustomManage();
             //custom.Owner = this;
             custom.Show();
-            this.Close();
+            //this.Close();
          
         }
 

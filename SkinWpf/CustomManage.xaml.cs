@@ -143,7 +143,7 @@ namespace SkinWpf
 
         private void StepPre_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
 
         private void StepQuery_Click(object sender, RoutedEventArgs e)
